@@ -1,10 +1,11 @@
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import json
-
-
+import os
 from datetime import date
 import json
+
+DATABASE_URL = os.environ['DATABASE_URL']
 
 class DateEncoder(json.JSONEncoder):
 
@@ -16,11 +17,11 @@ class DateEncoder(json.JSONEncoder):
 def queryDB(query):
     try:
         connection = psycopg2.connect(DATABASE_URL, sslmode='require')
-        #connection = psycopg2.connect(user = "postgres",
-        #                             password = "HappyBunnies@2018",
-        #                              host = "localhost",
-        #                             port = "5432",
-        #                              database = "MHT")
+        # connection = psycopg2.connect(user = "postgres",
+        #                               password = "987321",
+        #                               host = "localhost",
+        #                               port = "5432",
+        #                               database = "copd")
         cur = connection.cursor(cursor_factory=RealDictCursor)
         # Print PostgreSQL Connection properties
     #    print ( connection.get_dsn_parameters(),"\n")
@@ -43,11 +44,11 @@ def queryDB(query):
 def updateDB(query):
     try:
         connection = psycopg2.connect(DATABASE_URL, sslmode='require')
-        #connection = psycopg2.connect(user = "postgres",
-        #                             password = "HappyBunnies@2018",
-        #                              host = "localhost",
-        #                              port = "5432",
-        #                              database = "MHT")
+        # connection = psycopg2.connect(user = "postgres",
+        #                               password = "987321",
+        #                               host = "localhost",
+        #                               port = "5432",
+        #                               database = "copd")
         cur = connection.cursor(cursor_factory=RealDictCursor)
         # Print PostgreSQL Connection properties
     #    print ( connection.get_dsn_parameters(),"\n")
@@ -72,11 +73,11 @@ def updateDB(query):
 def updateDBReturningRecord(query):
     try:
         connection = psycopg2.connect(DATABASE_URL, sslmode='require')
-        #connection = psycopg2.connect(user = "postgres",
-        #                              password = "HappyBunnies@2018",
-        #                              host = "localhost",
-        #                              port = "5432",
-        #                              database = "MHT")
+        # connection = psycopg2.connect(user = "postgres",
+        #                               password = "987321",
+        #                               host = "localhost",
+        #                               port = "5432",
+        #                               database = "copd")
         cur = connection.cursor(cursor_factory=RealDictCursor)
         # Print PostgreSQL Connection properties
     #    print ( connection.get_dsn_parameters(),"\n")

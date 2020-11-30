@@ -1,0 +1,60 @@
+<html>
+<head>
+    <link rel="stylesheet" href="static/css/risk.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand text-white">Mental Health Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+           <!-- <li class="nav-item">
+                <a class="nav-link" href="#/homeView">Home</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/sleepView">Sleep</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displaySleepView">Sleep Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/bloodpView">Blood Pressure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayBloodPView">Blood Pressure Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/exerciseView">Exercise</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayExerciseView">Exercise Report</a>
+            </li>
+         <!--   <li class="nav-item active">
+                <a class="nav-link" href="#/riskView">Risk Center</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/articlesView">Mental Health Hub</a>
+            </li>
+        </ul>
+    </div>
+    <button type="submit" class="btn" ng-click="logout()">Logout</button>
+</nav>
+<br><br><br>
+
+
+<div id="container">
+    <h1>Depression Assessment</h1>
+    <br/>
+    <div id="quiz"></div>
+    <div class="button" id="next"><a href="#">Next</a></div>
+    <div class="button" id="prev"><a href="#">Prev</a></div>
+</div>
+<script src="static/js/quiz.js"></script>
+</body>
+</html>

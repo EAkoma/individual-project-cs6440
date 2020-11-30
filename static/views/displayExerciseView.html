@@ -1,0 +1,85 @@
+<html>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand text-white">Mental Health Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+           <!-- <li class="nav-item">
+                <a class="nav-link" href="#/homeView">Home</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/sleepView">Sleep</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displaySleepView">Sleep Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/bloodpView">Blood Pressure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayBloodPView">Blood Pressure Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/exerciseView">Exercise</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#/displayExerciseView">Exercise Report</a>
+            </li>
+           <!-- <li class="nav-item">
+                <a class="nav-link" href="#/riskView">Risk Center</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/articlesView">Mental Health Hub</a>
+            </li>
+        </ul>
+    </div>
+    <button type="submit" class="btn" ng-click="logout()">Logout</button>
+</nav>
+<br><br><br>
+
+<h1>Exercise Report</h1>
+
+<main role="main">
+
+    <div class="container">
+        <!-- Example row of columns -->
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Exercise Name</th>
+                <th>Exercise Type</th>
+                <th>Duration (mins)</th>
+                <th>Date-Time</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat = "entry in exerciseData">
+                <td>{{entry.exercise_name}}</td>
+                <td>{{entry.exercise_type}}</td>
+                <td>{{entry.duration}}</td>
+                <td>{{entry.date_time}}</td>
+
+            </tr>
+            </tbody>
+        </table>
+
+
+        <br>
+
+
+    </div>
+
+
+</main>
+
+
+
+
+</body>
+</html>

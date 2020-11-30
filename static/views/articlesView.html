@@ -1,0 +1,131 @@
+<html>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand text-white">Mental Health Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+           <!-- <li class="nav-item">
+                <a class="nav-link" href="#/homeView">Home</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/sleepView">Sleep</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displaySleepView">Sleep Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/bloodpView">Blood Pressure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayBloodPView">Blood Pressure Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/exerciseView">Exercise</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayExerciseView">Exercise Report</a>
+            </li>
+           <!-- <li class="nav-item">
+                <a class="nav-link" href="#/riskView">Risk Center</a>
+            </li> -->
+            <li class="nav-item active">
+                <a class="nav-link" href="#/articlesView">Mental Health Hub</a>
+            </li>
+        </ul>
+    </div>
+    <button type="submit" class="btn" ng-click="logout()">Logout</button>
+</nav>
+<br><br><br>
+
+<h1>Mental Health Dashboard</h1>
+
+<main role="main">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4"></div>
+            <div class="h4 col-md-6">
+                <form class="form-inline align-center">
+                    <label for="dataRange">Health Insights of &nbsp;&nbsp;&nbsp;</label>
+                    <select id="dataRange" class="form-control" style="width:auto;" ng-model="timeSelector" ng-change="callAgain()">
+                        <option value="7">Last 7 Days</option>
+                        <option value="30">Last 30 Days</option>
+                        <option value="183">Last 6 Months</option>
+                        <option value="365">Last 12 Months</option>
+                        <option value="alltime">All</option>
+                    </select>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+            <!-- Sleep Cycle Charts -->
+            <div class="col-md-12 mb-2">
+                <div class="card card-hover-shadow p-1">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col"  style="position: relative; height:30vh;">
+                                <canvas id="TotalHoursOfSleep"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         <!--   <div class="col-md-6">
+                <div class="card card-hover-shadow">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col"  style="position: relative; height:30vh;">
+                                <canvas id="TotalHoursOfSleepMorning"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-md-12 mb-2">
+                <div class="card card-hover-shadow p-1">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col"  style="position: relative; height:30vh;">
+                                <canvas id="TotalHoursOfExercise"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-2">
+                <div class="card card-hover-shadow p-1">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col"  style="position: relative; height:30vh;">
+                                <canvas id="TotalAmtOfSys"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-2">
+                <div class="card card-hover-shadow p-1">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col"  style="position: relative; height:30vh;">
+                                <canvas id="TotalAmtOfDia"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+</body>
+</html>

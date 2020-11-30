@@ -1,0 +1,101 @@
+<html>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand text-white">Mental Health Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#/homeView">Home</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/sleepView">Sleep</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displaySleepView">Sleep Report</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#/bloodpView">Blood Pressure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayBloodPView">Blood Pressure Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/exerciseView">Exercise</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayExerciseView">Exercise Report</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#/riskView">Risk Center</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/articlesView">Mental Health Hub</a>
+            </li>
+        </ul>
+    </div>
+    <button type="submit" class="btn" ng-click="logout()">Logout</button>
+</nav>
+<br><br><br>
+
+<h1>Health and Wellness</h1>
+
+<main role="main">
+
+    <div class="container">
+        <h3>Blood Pressure</h3>
+        <div class="row">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="sys_bloodp">Systolic Blood Pressure (mmHg):</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" ng-model="sys_bloodp" id="sys_bloodp">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="dia_bloodp">Diastolic Blood Pressure (mmHg):</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dia_bloodp" ng-model="dia_bloodp">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="date">Date:</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="date" ng-model="date">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-success" ng-show="successMessagebool">
+                            <strong>{{successMessage}}</strong>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- TODO: create update function -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" ng-click=insertBloodp()>Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div class="alert alert-danger" ng-show = "errormsg">
+                <strong>Something wrong with Data!</strong> Please validate and try again.
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+</body>
+</html>

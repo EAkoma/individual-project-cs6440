@@ -1,0 +1,123 @@
+<html>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand text-white">Mental Health Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#/homeView">Home</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/sleepView">Sleep</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displaySleepView">Sleep Report</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/bloodpView">Blood Pressure</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayBloodPView">Blood Pressure Report</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#/exerciseView">Exercise</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#/displayExerciseView">Exercise Report</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" href="#/riskView">Risk Center</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" href="#/articlesView">Mental Health Hub</a>
+            </li>
+        </ul>
+    </div>
+    <button type="submit" class="btn" ng-click="logout()">Logout</button>
+</nav>
+<br><br><br>
+
+<h1>Health and Wellness</h1>
+
+<main role="main">
+
+    <div class="container">
+        <h3>Exercise</h3>
+        <div class="row">
+            <form class="form-horizontal">
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="exer_name">Exercise Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="exer_name" ng-model="exer_name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="exer_type">Exercise Type:</label>
+                    <div class="col-sm-10">
+
+                        <select name="exer_type" id="exer_type" ng-model="exer_type" ng-model="data.singleSelect">
+                            <option value="Cardio">Cardio</option>
+                            <option value="Weight-lift">Weight-lift</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Aerobics">Aerobics</option>
+                            <option value="Walking">Walking</option>
+                            <option value="Cycling">Cycling</option>
+                            <option value="Other">Other</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="exer_dur">Exercise Duration in minutes:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="exer_dur" ng-model="exer_dur">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="date">Date:</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="date" ng-model="date">
+                    </div>
+                </div>
+                <div class="form-group">
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="alert alert-success" ng-show="successMessagebool">
+                            <strong>{{successMessage}}</strong>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- TODO: create update function -->
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default" ng-click=insertExercise()>Submit</button>
+                    </div>
+                </div>
+            </form>
+            <div class="alert alert-danger" ng-show = "errormsg">
+                <strong>Something wrong with Data!</strong> Please validate and try again.
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+
+</body>
+</html>
